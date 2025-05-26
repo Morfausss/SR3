@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+
+template <typename T>
+bool areEqual(T a, T b) {
+    return a == b;
+}
+
+int main() {
+    std::cout << std::boolalpha;
+
+    std::string typeChoice;
+    std::cout << "Enter data type (int, double, char, string): ";
+    std::cin >> typeChoice;
+
+    if (typeChoice == "int") {
+        int a, b;
+        std::cout << "First integer: ";
+        std::cin >> a;
+        std::cout << "Second integer: ";
+        std::cin >> b;
+        std::cout << "Are they equal? " << areEqual(a, b) << std::endl;
+    }
+    else if (typeChoice == "double") {
+        double a, b;
+        std::cout << "First double: ";
+        std::cin >> a;
+        std::cout << "Second double: ";
+        std::cin >> b;
+        std::cout << "Are they equal? " << areEqual(a, b) << std::endl;
+    }
+    else if (typeChoice == "char") {
+        char a, b;
+        std::cout << "First character: ";
+        std::cin >> a;
+        std::cout << "Second character: ";
+        std::cin >> b;
+        std::cout << "Are they equal? " << areEqual(a, b) << std::endl;
+    }
+    else if (typeChoice == "string") {
+        std::string a, b;
+        std::cout << "First string: ";
+        std::cin >> a;
+        std::cout << "Second string: ";
+        std::cin >> b;
+        std::cout << "Are they equal? " << areEqual(a, b) << std::endl;
+    }
+    else {
+        std::cout << "Just nope." << std::endl;
+    }
+
+    return 0;
+}
