@@ -1,0 +1,68 @@
+#include <iostream>
+
+template <typename T, std::size_t N>
+bool containsElement(T (&array)[N], T value) {
+    for (const T& element : array) {
+        if (element == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    std::string typeChoice;
+    std::cout << "Enter data type (int, double, char): ";
+    std::cin >> typeChoice;
+
+    if (typeChoice == "int") {
+        const int size = 5;
+        int arr[size];
+        std::cout << "Enter " << size << " integer values:\n";
+        for (int& element : arr) {
+            std::cin >> element;
+        }
+
+        int target;
+        std::cout << "Enter value to search: ";
+        std::cin >> target;
+
+        bool found = containsElement(arr, target);
+        std::cout << "Found? " << (found ? "Yes" : "No") << std::endl;
+    }
+    else if (typeChoice == "double") {
+        const int size = 5;
+        double arr[size];
+        std::cout << "Enter " << size << " double values:\n";
+        for (double& element : arr) {
+            std::cin >> element;
+        }
+
+        double target;
+        std::cout << "Enter value to search: ";
+        std::cin >> target;
+
+        bool found = containsElement(arr, target);
+        std::cout << "Found? " << (found ? "Yes" : "No") << std::endl;
+    }
+    else if (typeChoice == "char") {
+        const int size = 5;
+        char arr[size];
+        std::cout << "Enter " << size << " characters:\n";
+        for (char& element : arr) {
+            std::cin >> element;
+        }
+
+        char target;
+        std::cout << "Enter character to search: ";
+        std::cin >> target;
+
+        bool found = containsElement(arr, target);
+        std::cout << "Found? " << (found ? "Yes" : "No") << std::endl;
+    }
+    else {
+        std::cout << "hell nahh." << std::endl;
+    }
+
+    return 0;
+}
