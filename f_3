@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+
+template <typename T>
+void swapValues(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    std::string typeChoice;
+    std::cout << "Enter data type (int, double, char, string): ";
+    std::cin >> typeChoice;
+
+    if (typeChoice == "int") {
+        int a, b;
+        std::cout << "First integer: ";
+        std::cin >> a;
+        std::cout << "Second integer: ";
+        std::cin >> b;
+
+        swapValues(a, b);
+        std::cout << "After swapping: a = " << a << ", b = " << b << std::endl;
+    }
+    else if (typeChoice == "double") {
+        double a, b;
+        std::cout << "First double: ";
+        std::cin >> a;
+        std::cout << "Second double: ";
+        std::cin >> b;
+
+        swapValues(a, b);
+        std::cout << "After swapping: a = " << a << ", b = " << b << std::endl;
+    }
+    else if (typeChoice == "char") {
+        char a, b;
+        std::cout << "First character: ";
+        std::cin >> a;
+        std::cout << "Second character: ";
+        std::cin >> b;
+
+        swapValues(a, b);
+        std::cout << "After swapping: a = " << a << ", b = " << b << std::endl;
+    }
+    else if (typeChoice == "string") {
+        std::string a, b;
+        std::cout << "First string: ";
+        std::cin >> a;
+        std::cout << "Second string: ";
+        std::cin >> b;
+
+        swapValues(a, b);
+        std::cout << "After swapping: << a , b << std::endl";
+    }
+    else {
+        std::cout << "Nahh." << std::endl;
+    }
+
+    return 0;
+}
