@@ -1,0 +1,45 @@
+#include <iostream>
+
+template <typename T, std::size_t N>
+T getLastElement(T (&array)[N]) {
+    return array[N - 1];
+}
+
+int main() {
+    std::string typeChoice;
+    std::cout << "Enter data type (int, double, char): ";
+    std::cin >> typeChoice;
+
+    if (typeChoice == "int") {
+        const int size = 5;
+        int arr[size];
+        std::cout << "Enter " << size << " integer values:\n";
+        for (int& element : arr) {
+            std::cin >> element;
+        }
+        std::cout << "Last element: " << getLastElement(arr) << std::endl;
+    }
+    else if (typeChoice == "double") {
+        const int size = 5;
+        double arr[size];
+        std::cout << "Enter " << size << " double values:\n";
+        for (double& element : arr) {
+            std::cin >> element;
+        }
+        std::cout << "Last element: " << getLastElement(arr) << std::endl;
+    }
+    else if (typeChoice == "char") {
+        const int size = 5;
+        char arr[size];
+        std::cout << "Enter " << size << " characters:\n";
+        for (char& element : arr) {
+            std::cin >> element;
+        }
+        std::cout << "Last element: " << getLastElement(arr) << std::endl;
+    }
+    else {
+        std::cout << "Unsupported data type." << std::endl;
+    }
+
+    return 0;
+}
