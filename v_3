@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of integers: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Vector must contain at least one element." << endl;
+        return 1;
+    }
+
+    vector<int> numbers;
+    numbers.reserve(n);
+
+    cout << "Enter " << n << " integers:" << endl;
+    for (int i = 0; i < n; ++i) {
+        int value;
+        cin >> value;
+        numbers.push_back(value);
+    }
+
+    int maxValue = *ranges::max_element(numbers.begin(), numbers.end());
+    cout << "The maximum value is: " << maxValue << endl;
+
+    return 0;
+}
