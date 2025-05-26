@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <random>
+
+using namespace std;
+
+int main() {
+    constexpr int size = 10; // Константний розмір
+    vector<int> numbers;
+
+    // C++11: використання сучасного генератора випадкових чисел
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, 99); // Діапазон [0, 99]
+
+    for (int i = 0; i < size; ++i) {
+        int randomNumber = dist(gen);
+        numbers.push_back(randomNumber);
+    }
+
+    cout << "Randomly generated vector elements: ";
+    for (int number : numbers) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
